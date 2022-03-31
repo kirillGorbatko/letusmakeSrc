@@ -1,0 +1,232 @@
+//------------------------------------------------------------layout
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	overflow: hidden;
+	width: 100%;
+	min-height: var(--height-header);
+}
+
+.header.scroll {
+	.header__wrapper {
+		height: 7rem;
+		box-shadow: rgba($black, 0.09) 0 0.2rem 0.1rem, rgba($black, 0.09) 0 0.4rem 0.2rem,
+			rgba($black, 0.09) 0 0.8rem 0.4rem, rgba($black, 0.09) 0 1.6rem 0.8rem, rgba($black, 0.09) 0 3.2rem 1.6rem;
+	}
+}
+
+.header__wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	padding: 0 var(--gl-indent);
+	width: 100%;
+	height: var(--height-header);
+
+	background-color: $white;
+
+	transition: box-shadow 0.3s ease;
+	will-change: box-shadow;
+	@include z-index(header);
+}
+
+.header_in {
+	display: grid;
+	align-items: center;
+
+	height: 100%;
+	max-width: $page_width;
+	margin: 0 auto;
+
+	padding: 2rem 0;
+}
+
+.header__body {
+	display: grid;
+	grid-template-columns: 1fr minmax(min-content, 1fr);
+
+	gap: 3.2rem;
+}
+
+.header__logo {
+}
+
+.header__logo_link {
+	position: relative;
+	z-index: 6;
+
+	font-size: 2.4rem;
+	font-family: $font_3;
+	color: $grey_2;
+}
+
+.menu_header {
+	display: grid;
+	align-items: center;
+
+	@include bp($point_4 - 1) {
+		justify-items: end;
+	}
+}
+
+.menu_header__body {
+	@include bp($point_4 - 1) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		transform: translate(-110%, 0);
+		z-index: 5;
+
+		display: grid;
+		justify-items: center;
+
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		padding: 12rem 2rem 2rem 2rem;
+
+		background-color: rgba($black, 0.9);
+
+		transition: transform 0.3s ease;
+		will-change: transform;
+		.menu-open & {
+			transform: translate(0, 0);
+		}
+	}
+}
+
+.menu_header__list {
+	@include bp($point_4, min) {
+		display: grid;
+		grid-auto-flow: column;
+		justify-items: end;
+		align-items: center;
+
+		gap: 4rem;
+	}
+}
+
+.menu_header__item {
+	@include bp($point_4 - 1) {
+		&:not(:last-child) {
+			margin-bottom: 3.4rem;
+		}
+	}
+}
+
+.menu_header__link {
+	position: relative;
+
+	display: block;
+
+	font-family: $font_2;
+	font-weight: 500;
+	color: $grey_light;
+	text-transform: uppercase;
+	text-align: center;
+	cursor: pointer;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: -30%;
+		left: -20%;
+
+		width: 140%;
+		height: 160%;
+
+		opacity: 0;
+		transform: skew(15deg, 15deg);
+
+		transition: transform 0.3s ease, opacity 0.3s ease;
+
+		@include bp($point_4, min) {
+			border: 0.2rem solid $black;
+		}
+		@include bp($point_4 - 1) {
+			border: 0.2rem solid $white;
+		}
+	}
+
+	@extend %transition_color;
+	&._active,
+	&:hover {
+		text-decoration: none;
+
+		&::before {
+			opacity: 1;
+			transform: skew(0, 0);
+		}
+
+		@include bp($point_4, min) {
+			color: $black;
+		}
+		@include bp($point_4 - 1) {
+			color: $white;
+		}
+	}
+
+	@include bp($point_4, min) {
+		font-size: 1.4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 2.1rem;
+	}
+}
+
+.iconMenu {
+	@include bp($point_4, min) {
+		display: none;
+	}
+	@include bp($point_4 - 1) {
+		position: relative;
+		z-index: 6;
+
+		display: block;
+		width: 2.8rem;
+		height: 1.8rem;
+
+		cursor: pointer;
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+
+			width: 100%;
+			height: 0.2rem;
+
+			background-color: $grey_light;
+			transition: all 0.3s ease 0s;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		.menu_header__icon_span {
+			top: calc(50% - 0.1rem);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 0.1rem);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 0.1rem);
+			}
+		}
+	}
+}
+//------------------------------------------------------------layout###

@@ -1,0 +1,34 @@
+section.section.hero_section
+	.hero_section__bg(data-scr)
+			+picture({
+				class: 'hero_section_img',
+				customClass: 'hero_section_img__in',
+				type: 'jpg',
+				img: `hero/01`,
+			})
+			+picture({
+				class: 'hero_section_img--sad',
+				customClass: 'hero_section_img__in',
+				type: 'jpg',
+				img: `hero/02`,
+			})
+			+picture({
+				class: 'hero_section_cloud',
+				customClass: 'hero_section_cloud__in',
+				png: true,
+				img: `hero/01`,
+			})
+			+picture({
+				class: 'hero_section_sun',
+				customClass: 'hero_section_sun__in',
+				png: true,
+				img: `hero/02`,
+			})
+	.section_in.hero_section__in
+		.hero_section__content
+			.hero_section__head
+				h1.hero_section__title(data-scr) let us make <br> your lives easier
+				.hero_section__text(data-scr) We specialize in crafting awesome ideas for web, mobile and beyond.
+			a.hero_section__arrow._goto(data-scr, href="#work_section")
+				span.hero_section__arrow_in
+					+icon('arrow','icon--size_mod')

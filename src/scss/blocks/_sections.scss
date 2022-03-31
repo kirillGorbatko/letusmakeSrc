@@ -1,0 +1,19 @@
+//---------------------------------------------sections
+.section {
+	position: relative;
+
+	width: 100%;
+
+	@include bp($point_4, min) {
+		padding: 4.8rem var(--gl-indent) 6.8rem var(--gl-indent);
+	}
+	@include bp($point_4 - 1) {
+		padding: 3.2rem var(--gl-indent) 4.8rem var(--gl-indent);
+	}
+}
+
+.section_in {
+	max-width: $page_width;
+	width: 100%;
+	margin: 0 auto;
+}

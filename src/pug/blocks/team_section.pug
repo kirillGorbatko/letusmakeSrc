@@ -1,0 +1,70 @@
+- 
+	personal = [
+		{
+			photo: '01',
+			name: 'naME sURNAME',
+			post: 'Lead Developer',
+			twitter: true,
+			linkedin: true,
+		},
+		{
+			photo: '02',
+			name: 'naME sURNAME',
+			post: 'Lead Designer',
+			twitter: true,
+			dribbble: true,
+			linkedin: true,
+		},
+		{
+			photo: '03',
+			name: 'naME sURNAME',
+			post: 'Marketing Director',
+			skype: true,
+			linkedin: true,
+		},
+		{
+			photo: '04',
+			name: 'naME sURNAME',
+			post: 'Business Director',
+			skype: true,
+			linkedin: true,
+		},
+		];
+
+section.section.team_section
+	.section_in
+		+head_section({
+			title: "team",
+			subtitle: "We are a hard working group, who's aim is to listen to your problems and to come up with the best solution possible. We follow the lates trends on the web to create custom talierd niche websites."
+		})
+		ul.team_section__list 
+			each person in personal
+				li.team_section__item.item_team
+					.item_team__info.info_team
+						.info_team__photo
+							+picture({
+								class: 'info_team_img',
+								customClass: 'info_team_img__in',
+								png: true,
+								img: `team/${person.photo}`,
+							})
+						.info_team__name= person.name
+						.info_team__post= person.post
+					.item_team__social.social_team
+						ul.social_team__list
+							if (person.twitter)
+								li.social_team__item
+									a.social_team__link(href="#")
+										+icon('twitter','icon--size_mod')
+							if (person.dribbble)
+								li.social_team__item
+									a.social_team__link(href="#")
+										+icon('dribbble','icon--size_mod')
+							if (person.skype)
+								li.social_team__item
+									a.social_team__link(href="#")
+										+icon('skype','icon--size_mod')
+							if (person.linkedin)
+								li.social_team__item
+									a.social_team__link(href="#")
+										+icon('linkedin','icon--size_mod')

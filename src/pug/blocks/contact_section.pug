@@ -1,0 +1,34 @@
+section.section.contact_section
+	.section_in
+		+head_section({
+			title: "contact",
+		})
+		.contact_section__container 
+			.contact_section__column
+				.contact_section__label Where are we located?
+				a.contact_section__map(href="#") 
+					+picture({
+							class: 'contact_section_img',
+							customClass: 'contact_section_img__in',
+							type: 'jpg',
+							img: `map`,
+						})
+			.contact_section__column
+				.contact_section__label Want to contact us now? Just drop us a line below.
+				form.contact_section__form(action="#")
+					.contact_section__teaxtarea
+						+form_textarea({
+							placeholder: 'Leave us a message...',
+							id: 'textarea_1',
+						})
+					.contact_section__row
+						.contact_section__input
+							+form_input({
+								type: 'text',
+								placeholder: 'your@mail.com',
+								id: 'input_1',
+							})
+						button.contact_section__button(type="submit")
+							span.contact_section__icon
+								+icon('submit','icon--size_mod')
+							span.contact_section__button_in SEND

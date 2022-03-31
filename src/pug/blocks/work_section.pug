@@ -1,0 +1,16 @@
+section.section.work_section
+	.section_in
+		+head_section({
+			title: "featured work",
+			subtitle: "Here you can find some of our latest works, to see the details of these works just click the thumbnails below."
+		})
+		ul.work_section__list
+			+loop_while(9)
+				li.work_section__item
+					a.work_section__link(href="#")
+						+picture({
+							class: 'work_section_img',
+							customClass: 'work_section_img__in',
+							type: 'jpg',
+							img: `work/0${i}`,
+						})

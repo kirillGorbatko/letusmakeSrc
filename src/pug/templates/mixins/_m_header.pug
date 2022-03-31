@@ -1,0 +1,17 @@
+- nav = ['work', 'team', 'contact'];
+mixin header
+	header.header
+		.header__wrapper
+			.header_in
+				.header__body
+					.header__logo
+						a.header__logo_link(href="#") LØGØ
+					nav.header__menu.menu_header
+						.menu_header__body
+							if (nav)
+								ul.menu_header__list
+									each link in nav
+										li.menu_header__item 
+											a.menu_header__link._goto-block(href=`#${link}_section`)= link
+						button.menu_header__icon.iconMenu(type="button")
+							span.menu_header__icon_span

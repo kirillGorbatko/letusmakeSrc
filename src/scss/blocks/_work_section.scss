@@ -1,0 +1,35 @@
+.work_section {
+}
+
+.work_section__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+
+	@include bp($point_4, min) {
+		gap: 6rem;
+	}
+
+	@include bp($point_4 - 1) {
+		gap: 2.6rem;
+	}
+}
+
+.work_section__item {
+	overflow: hidden;
+}
+
+.work_section__link {
+	display: block;
+
+	@extend %transition_transform;
+	&:hover {
+		transform: scale(1.1);
+	}
+}
+
+.work_section_img {
+}
+
+.work_section_img__in {
+	@extend %cover_img;
+}

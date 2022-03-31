@@ -1,0 +1,41 @@
+.footer {
+	display: grid;
+	align-items: center;
+
+	width: 100%;
+	min-height: var(--height-footer);
+	flex: 0 0 auto;
+
+	padding: 0 var(--gl-indent);
+
+	background-color: $grey_1;
+}
+
+.footer_in {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	width: 100%;
+	max-width: $page_width;
+	margin: 0 auto;
+
+	padding: 2rem 0;
+	gap: 2rem;
+}
+
+.footer___address {
+	font-size: 1.6rem;
+	line-height: 1.56;
+	color: $grey_5;
+}
+
+.footer___address_label {
+	color: $grey_4;
+}
+
+.footer___copy {
+	font-size: 1.6rem;
+	line-height: 1.56;
+	color: $grey_5;
+}

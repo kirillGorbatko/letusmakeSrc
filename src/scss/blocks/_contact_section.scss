@@ -1,0 +1,106 @@
+.contact_section {
+}
+
+.contact_section__container {
+	display: grid;
+	gap: 4rem;
+
+	@include bp($point_4, min) {
+		grid-template-columns: 35.6% 1fr;
+	}
+}
+
+.contact_section__column {
+	display: grid;
+	grid-auto-rows: max-content 1fr;
+}
+
+.contact_section__label {
+	font-size: 1.6rem;
+	line-height: 1.31;
+	color: $grey;
+
+	&:not(:last-child) {
+		margin-bottom: 2.4rem;
+	}
+}
+
+.contact_section__map {
+	display: block;
+	max-height: 32rem;
+
+	box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 1, 1, 0.25);
+	border: solid 0.6rem $white;
+}
+
+.contact_section_img {
+}
+
+.contact_section_img__in {
+	@extend %cover_img;
+}
+
+.contact_section__form {
+	display: grid;
+	grid-auto-rows: 1fr max-content;
+
+	.form_textarea,
+	.form_textarea__field,
+	textarea {
+		height: 100%;
+	}
+}
+
+.contact_section__teaxtarea {
+	&:not(:last-child) {
+		margin-bottom: 2.4rem;
+	}
+}
+
+.contact_section__input {
+}
+
+.contact_section__row {
+	display: grid;
+	gap: 2.2rem;
+
+	@include bp($point_6, min) {
+		grid-template-columns: 1fr 38%;
+	}
+}
+
+.contact_section__button {
+	display: grid;
+	grid-template-columns: 2.6rem max-content;
+	justify-content: center;
+	justify-items: center;
+	align-items: center;
+
+	min-height: 6rem;
+	gap: 1.4rem;
+	padding: 0 2rem;
+
+	cursor: pointer;
+	box-shadow: 0 0.2rem 1rem 0 rgba(0, 1, 1, 0.25);
+	border: solid 0.2rem $white;
+	background-color: $blue;
+
+	transition: background-color 0.3s ease;
+	&:hover {
+		background-color: darken($blue, 10%);
+	}
+}
+
+.contact_section__icon {
+	width: 1.6rem;
+	height: 1.4rem;
+
+	color: $white;
+}
+
+.contact_section__button_in {
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: $white;
+	text-transform: uppercase;
+}
