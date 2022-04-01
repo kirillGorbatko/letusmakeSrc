@@ -2,7 +2,7 @@ import SmoothScroll from 'smooth-scroll';
 import 'smoothscroll-for-websites';
 import { menuClose, bodyUnlock } from 'components/functions';
 import { GLOBAL_VARS } from 'utils/constants';
-import { onWindowScroll } from 'utils';
+import { onWindowScroll, documentReady } from 'utils';
 
 let blocks = [];
 // ========================================================================================================================================================
@@ -126,7 +126,7 @@ function scrollOnscroll() {
 }
 
 setTimeout(() => {
-	document.addEventListener('DOMContentLoaded', scrollOnscroll);
+	documentReady(scrollOnscroll);
 	scrollOnscroll();
 }, 100);
 
