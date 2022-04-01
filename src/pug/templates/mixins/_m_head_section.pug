@@ -1,6 +1,6 @@
 mixin head_section(data)
-	.section_head(class=`${data.class}__head`)
+	.section_head
 		if (data.title)
-			h2.section_head__title(data-scr)= data.title
+			h2.section_head__title.animateItem= data.title
 		if (data.subtitle)
-			.section_head__subtitle(data-scr)= data.subtitle
+			.section_head__subtitle.animateItem= data.subtitle

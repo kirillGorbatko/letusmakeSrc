@@ -3,13 +3,14 @@ let bodyLockStatus = true;
 export const bodyLock = (delay = 500) => {
 	let body = document.querySelector('body');
 	if (bodyLockStatus) {
-		let lockPadding = document.querySelectorAll('[data-lp]');
-		for (let index = 0; index < lockPadding.length; index += 1) {
-			const el = lockPadding[index];
-			el.style.paddingRight = `${window.innerWidth} - ${document.querySelector('.wrapper').offsetWidth} + px`;
-		}
-		body.style.paddingRight = `${window.innerWidth} - ${document.querySelector('.wrapper').offsetWidth} + px`;
-		document.documentElement.classList.add('lock');
+		let $lockPadding = document.querySelectorAll('.lockPadding');
+		$lockPadding.forEach(el => {
+			const element = el;
+			element.style.paddingRight = `${window.innerWidth - document.querySelector('.wrapper').offsetWidth}px`;
+		});
+
+		body.style.paddingRight = `${window.innerWidth - document.querySelector('.wrapper').offsetWidth}px`;
+		document.documentElement.classList.add('pageLock');
 
 		bodyLockStatus = false;
 		setTimeout(() => {
@@ -21,14 +22,14 @@ export const bodyLock = (delay = 500) => {
 export const bodyUnlock = (delay = 500) => {
 	let body = document.querySelector('body');
 	if (bodyLockStatus) {
-		let lockPadding = document.querySelectorAll('[data-lp]');
+		let $lockPadding = document.querySelectorAll('.lockPadding');
 		setTimeout(() => {
-			for (let index = 0; index < lockPadding.length; index += 1) {
-				const el = lockPadding[index];
-				el.style.paddingRight = '0px';
-			}
+			$lockPadding.forEach(el => {
+				const element = el;
+				element.style.paddingRight = '0px';
+			});
 			body.style.paddingRight = '0px';
-			document.documentElement.classList.remove('lock');
+			document.documentElement.classList.remove('pageLock');
 		}, delay);
 		bodyLockStatus = false;
 		setTimeout(() => {
@@ -38,7 +39,7 @@ export const bodyUnlock = (delay = 500) => {
 };
 
 export const bodyLockToggle = (delay = 500) => {
-	if (document.documentElement.classList.contains('lock')) {
+	if (document.documentElement.classList.contains('pageLock')) {
 		bodyUnlock(delay);
 	} else {
 		bodyLock(delay);
@@ -51,7 +52,7 @@ export function menuInit() {
 		iconMenu.addEventListener('click', (e) => {
 			if (bodyLockStatus) {
 				bodyLockToggle();
-				document.documentElement.classList.toggle('menu-open');
+				document.documentElement.classList.toggle('menuOpen');
 			}
 		});
 	}
@@ -59,7 +60,7 @@ export function menuInit() {
 
 export function menuClose() {
 	bodyUnlock();
-	document.documentElement.classList.remove('menu-open');
+	document.documentElement.classList.remove('menuOpen');
 }
 
 export function uniqArray(array) {

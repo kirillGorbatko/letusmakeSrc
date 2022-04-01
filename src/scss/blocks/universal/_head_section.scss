@@ -78,8 +78,8 @@
 	will-change: transform, opacity;
 }
 
-.section_head__title._active,
-.section_head__subtitle._active {
+.section_head__title.activeState,
+.section_head__subtitle.activeState {
 	transform: translate(0, 0);
 	opacity: 1;
 }

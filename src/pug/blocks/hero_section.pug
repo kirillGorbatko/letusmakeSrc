@@ -1,5 +1,5 @@
 section.section.hero_section
-	.hero_section__bg(data-scr)
+	.hero_section__bg.animateItem
 			+picture({
 				class: 'hero_section_img',
 				customClass: 'hero_section_img__in',
@@ -27,8 +27,8 @@ section.section.hero_section
 	.section_in.hero_section__in
 		.hero_section__content
 			.hero_section__head
-				h1.hero_section__title(data-scr) let us make <br> your lives easier
-				.hero_section__text(data-scr) We specialize in crafting awesome ideas for web, mobile and beyond.
-			a.hero_section__arrow._goto(data-scr, href="#work_section")
+				h1.hero_section__title.animateItem let us make <br> your lives easier
+				.hero_section__text.animateItem We specialize in crafting awesome ideas for web, mobile and beyond.
+			a.hero_section__arrow.goTo.animateItem(href="#work_section", ,)
 				span.hero_section__arrow_in
 					+icon('arrow','icon--size_mod')

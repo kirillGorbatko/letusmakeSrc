@@ -17,7 +17,6 @@ const readyFunc = () => {
 };
 
 const loadFunc = () => {
-	console.log('page load');
 };
 
 documentReady(() => {

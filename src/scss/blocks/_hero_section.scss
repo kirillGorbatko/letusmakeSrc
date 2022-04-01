@@ -183,7 +183,7 @@
 	transition: opacity 2s ease 1.5s, transform 5s ease 1.5s;
 }
 
-.hero_section__bg._active {
+.hero_section__bg.activeState {
 	.hero_section_img--sad {
 		opacity: 0;
 	}
@@ -202,7 +202,7 @@
 
 	transition: transform 0.8s ease, opacity 0.5s ease;
 }
-.hero_section__title._active {
+.hero_section__title.activeState {
 	opacity: 1;
 	transform: translate(0, 0);
 }
@@ -213,7 +213,7 @@
 
 	transition: transform 0.8s ease, opacity 0.5s ease;
 }
-.hero_section__text._active {
+.hero_section__text.activeState {
 	opacity: 1;
 	transform: translate(0, 0);
 }
@@ -232,7 +232,7 @@
 		animation: arrow 3s ease-out infinite alternate running 0s none;
 	}
 }
-.hero_section__arrow._active {
+.hero_section__arrow.activeState {
 	opacity: 1;
 	transform: translate(0, 0);
 }

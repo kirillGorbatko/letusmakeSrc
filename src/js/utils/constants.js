@@ -4,5 +4,6 @@ export const GLOBAL_VARS = {
 	mediaPoint2: 768,
 	mediaPoint3: 480,
 	mediaPoint4: 320,
+	activeState: 'activeState',
 	projectDevStatus: process.env.NODE_ENV === 'development',
 };

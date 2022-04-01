@@ -12,6 +12,6 @@ mixin header
 								ul.menu_header__list
 									each link in nav
 										li.menu_header__item 
-											a.menu_header__link._goto-block(href=`#${link}_section`)= link
+											a.menu_header__link.gotoBlock(href=`#${link}_section`)= link
 						button.menu_header__icon.iconMenu(type="button")
 							span.menu_header__icon_span
